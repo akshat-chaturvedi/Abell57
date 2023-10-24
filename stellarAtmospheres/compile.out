@@ -1,0 +1,17 @@
+                                                          Cloudy 23.00
+                                                         www.nublado.org
+
+                                                  PRNG seed: 0xb0c1dcc4013e2b00
+
+                       **************************************23Jul25**************************************
+                       *                                                                                 *
+                       * table stars available                                                           *
+
+ I will now list all stellar atmosphere grids that are ready to be used (if any).
+ User-defined stellar atmosphere grids will not be included in this list.
+
+   table star rauch H-Ni solar <Teff> [ <log(g)> ]
+   table HM05 <z> [ <factor> ]
+   table HM05 quasar <z> [ <factor> ]
+   table HM12 <z> [ <factor> ]
+ [Stop in ParseTable at parse_table.cpp:1062, Cloudy exited OK]

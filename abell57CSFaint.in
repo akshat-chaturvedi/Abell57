@@ -1,0 +1,36 @@
+title abell57CSFaint
+sphere
+BLACKbody= 5.082341 LOG
+LUMINOSITY 36.790073 LOG range -0.000232 6.866279
+HDEN=2.662584 LOG
+RADIUS = 0.11 linear parsecs
+abundances planetary nebula
+metal     1.250
+iterate
+#optimize lines
+#"O  3" 5006.84 intensity = 10.09
+#"N  2" 6584 intensity = 0.056
+#end of lines
+save last lines, zone cumulative, file="abell57CSFaint.emission"
+"O  2"  3728.81
+"O  3" 5006.84
+"Ne 3" 3868.76
+"H  1" 6562.80A
+"Ar 4" 4711.35A
+"O  2" 3726
+"O  2" 3729
+Blnd 5875.66A
+"H  1" 3798.94
+"O  3" 4363.21
+"O  3" 4960.91
+"H  1" 4861.32A
+"h  1" 4101.73A
+"H  1" 3889.02
+"H  1" 3970.08
+"H  1" 4340.47
+"He 1" 4471.68
+"He 2" 4685.80
+"He 2" 5411.52
+"N  2" 6583.45A
+"S  2" 6716.44A
+end of lines

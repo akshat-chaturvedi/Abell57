@@ -1,0 +1,24 @@
+title abell57_opt
+sphere
+table star rauch H-Ni solar 4.95424 LOG
+luminosity solar = 4.0000
+hden = 7 vary
+radius = 16
+abundances planetary nebula          
+metal     1.0000
+iterate
+optimize lines
+"H  1" 6562.80A intensity = 2.81
+end of lines 
+save last lines, zone cumulative, file="abell57_opt.emission"
+"O  2" 3728.81
+"O  3" 5006.84
+Blnd   5875.66A 
+"Ne 3" 3868.76
+"O  3" 4363.21
+"O  3" 4960.91
+"H  1" 4861.32A
+"h  1" 4101.73A
+"h  1" 4340.46A
+"He 1" 6678.15A 
+end of lines
