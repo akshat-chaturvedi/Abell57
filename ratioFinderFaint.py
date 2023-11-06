@@ -25,6 +25,10 @@ dat1.rename_column("Ar 4 4711.35A", "Ar4")
 dat1.rename_column("O  2 3726.00A", "O2 3726")
 dat1.rename_column("O  2 3729.00A", "O2 3729")
 dat1.rename_column("S  2 6716.44A", "S2")
+dat1.rename_column("Ne 3 3967.47A", "Ne3 3968")
+dat1.rename_column("Ar 4 4740.12A", "Ar4 4740")
+dat1.rename_column("He 1 6678.15A", "He1 6678")
+dat1.rename_column("H  1 3835.39A", "HEta")
 
 lineRatios = []
 colNames = []
@@ -63,6 +67,7 @@ with open("abell57CSFaintParams.dat", "w") as f:
     for param in runParams:
         f.write(param)
     f.write("\n")
+    f.write("="*50+"\n")
 
 df = pd.DataFrame({'Species': colNames, 'Relative Flux': lineRatios})
 df.to_csv('abell57CSFaintParams.dat', sep=',', mode='a', float_format='%.5f', header=True, index=False)

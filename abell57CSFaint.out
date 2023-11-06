@@ -1,7 +1,7 @@
                                                           Cloudy 23.00
                                                          www.nublado.org
 
-                                                  PRNG seed: 0x39cd2e19ee087533
+                                                  PRNG seed: 0x92c63f450808323f
 
                        **************************************23Jul25**************************************
                        *                                                                                 *
@@ -16,8 +16,13 @@
                        * #<<< mie_read_opc reading file -- silicate_ism_10.opc                      >>>> *
                        * metal     1.250                                                                 *
                        * iterate                                                                         *
-                       * optimize lines                                                                  *
+                       * #optimize lines                                                                 *
+                       * #"O  3" 5006.84 intensity = 10.09                                               *
+                       * #"N  2" 6584 intensity = 0.056                                                  *
+                       * #end of lines                                                                   *
                        * save last lines, zone cumulative, file="abell57CSFaint.emission"                *
+WARNING: read "H 1" as spectrum
+Assuming required spectrum is "H  1"
                        *                                                                                 *
                        ***********************************************************************************
 
@@ -165,10 +170,10 @@
                        * abundances planetary nebula                                                     *
                        * metal     1.250                                                                 *
                        * iterate                                                                         *
-                       * optimize lines                                                                  *
-                       * "O  3" 5006.84 intensity = 10.09                                                *
-                       * "N  2" 6584 intensity = 0.056                                                   *
-                       * end of lines                                                                    *
+                       * #optimize lines                                                                 *
+                       * #"O  3" 5006.84 intensity = 10.09                                               *
+                       * #"N  2" 6584 intensity = 0.056                                                  *
+                       * #end of lines                                                                   *
                        * save last lines, zone cumulative, file="abell57CSFaint.emission"                *
                        * "O  2"  3728.81                                                                 *
                        * "O  3" 5006.84                                                                  *
@@ -191,6 +196,10 @@
                        * "He 2" 5411.52                                                                  *
                        * "N  2" 6583.45A                                                                 *
                        * "S  2" 6716.44A                                                                 *
+                       * "Ne 3" 3967.47A                                                                 *
+                       * "Ar 4" 4740.12A                                                                 *
+                       * "He 1" 6678.15A                                                                 *
+                       * "H 1" 3835.39A                                                                  *
                        * end of lines                                                                    *
                        *********************************> Log(U): -2.24 <*********************************
 
@@ -1177,7 +1186,7 @@ He 1                3704.90A   31.809    0.0014      Ne 4                1601.45
    <a>:1.29E-07  erdeFe0.0E+00  Tcompt2.71E+10  Tthr2.96E+10  <Tden>: 1.02E+04  <dens>:1.10E-21  <MolWgt>6.90E-01
      Mean Jeans  l(cm)1.71E+20  M(sun)1.45E+06  smallest:     len(cm):1.07E+20  M(sun):3.51E+05  a_ox tran:  0.00
  Rion:7.927E+17  Dist:0.00E+00  Diam:0.000E+00
- Hatom level 70  HatomType: add  HInducImp  F  He tot level: 63  He2 level:   70  ExecTime    34.8
+ Hatom level 70  HatomType: add  HInducImp  F  He tot level: 63  He2 level:   70  ExecTime    34.2
  ConvrgError(%)  <eden>  0.087  MaxEden  0.438  <H-C>   0.11  Max(H-C)    0.46  <Press>   0.000  MaxPrs er  0.000
   Continuity(%)  chng Te   3.4  elec den   4.5  n(H2)    0.0  n(CO)        0.0
 
@@ -1304,6 +1313,8 @@ WARNING: no exact matching lines found for "He 2" 4685.80A
 Taking best match as "He 2                4685.68A"
 WARNING: no exact matching lines found for "He 2" 5411.52A
 Taking best match as "He 2                5411.45A"
+WARNING: no exact matching lines found for "H  1" 3835.39A
+Taking best match as "H  1                3835.38A"
  ####  1  Te:1.232E+04 Hden:4.598E+02 Ne:5.481E+02 R:3.395E+17 R-R0:8.802E+13 dR:1.760E+14 NTR:  7 Htot:2.007E-18 T912: 1.47e+02###
  Hydrogen      1.84e-03 9.98e-01 H+o/Hden 1.00e+00 1.33e-10 H-    H2 7.69e-14 6.46e-12 H2+ HeH+ 9.46e-12 Ho+ ColD 1.49e+14 8.08e+16
  Helium        1.22e-04 1.06e-01 8.94e-01 HeI 2s3S 6.98e-08 Comp H,C 1.30e-25 1.38e-26 Fill Fac 1.00e+00 Gam1/tot 1.00e+00
@@ -1423,10 +1434,10 @@ Taking best match as "He 2                5411.45A"
                        * abundances planetary nebula                                                     *
                        * metal     1.250                                                                 *
                        * iterate                                                                         *
-                       * optimize lines                                                                  *
-                       * "O  3" 5006.84 intensity = 10.09                                                *
-                       * "N  2" 6584 intensity = 0.056                                                   *
-                       * end of lines                                                                    *
+                       * #optimize lines                                                                 *
+                       * #"O  3" 5006.84 intensity = 10.09                                               *
+                       * #"N  2" 6584 intensity = 0.056                                                  *
+                       * #end of lines                                                                   *
                        * save last lines, zone cumulative, file="abell57CSFaint.emission"                *
                        * "O  2"  3728.81                                                                 *
                        * "O  3" 5006.84                                                                  *
@@ -1449,6 +1460,10 @@ Taking best match as "He 2                5411.45A"
                        * "He 2" 5411.52                                                                  *
                        * "N  2" 6583.45A                                                                 *
                        * "S  2" 6716.44A                                                                 *
+                       * "Ne 3" 3967.47A                                                                 *
+                       * "Ar 4" 4740.12A                                                                 *
+                       * "He 1" 6678.15A                                                                 *
+                       * "H 1" 3835.39A                                                                  *
                        * end of lines                                                                    *
                        *********************************> Log(U): -2.24 <*********************************
 
@@ -2316,7 +2331,7 @@ He 2                3923.44A   31.886    0.0019      O  1                1304.86
    <a>:1.29E-07  erdeFe0.0E+00  Tcompt2.71E+10  Tthr2.95E+10  <Tden>: 1.02E+04  <dens>:1.10E-21  <MolWgt>6.90E-01
      Mean Jeans  l(cm)1.71E+20  M(sun)1.44E+06  smallest:     len(cm):1.06E+20  M(sun):3.47E+05  a_ox tran:  0.00
  Rion:7.924E+17  Dist:0.00E+00  Diam:0.000E+00
- Hatom level 70  HatomType: add  HInducImp  F  He tot level: 63  He2 level:   70  ExecTime    63.1
+ Hatom level 70  HatomType: add  HInducImp  F  He tot level: 63  He2 level:   70  ExecTime    61.8
  ConvrgError(%)  <eden>  0.077  MaxEden  0.408  <H-C>   0.10  Max(H-C)    0.41  <Press>   0.000  MaxPrs er  0.000
   Continuity(%)  chng Te   3.2  elec den   5.2  n(H2)    0.0  n(CO)        0.0
 
@@ -2746,5 +2761,5 @@ abell57CSFaint
          1 mean step length searches/chemistry step
 ----------------------------------------------------
 
- Cloudy ends: 166 zones, 2 iterations. (single thread) ExecTime(s) 63.07
+ Cloudy ends: 166 zones, 2 iterations. (single thread) ExecTime(s) 61.76
  [Stop in cdMain at maincl.cpp:593, Cloudy exited OK]
