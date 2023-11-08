@@ -7,7 +7,7 @@ radius = 16
 abundances planetary nebula          
 metal     1.0000
 iterate
-save last lines, zone cumulative, file="abell57_1.emission"
+save last lines, zone cumulative, file="abell57_2.emission"
 "O  2"  3728.81
 "Ne 3" 3868.76
 "O  3" 4363.21
@@ -18,5 +18,10 @@ Blnd 5875.66A
 "H  1" 4861.32A
 "h  1" 4101.73A
 "h  1" 4340.46A
-"He 1" 6678.15A 
+"He 1" 6678.15A
+"N  2" 6583.45A
+"Ne 3" 3967.47A
+"H  1" 3889.02A
+"H  1" 3970.08A
+"O  1" 6300.30A
 end of lines

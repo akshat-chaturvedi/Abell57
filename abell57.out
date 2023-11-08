@@ -1,7 +1,7 @@
                                                           Cloudy 23.00
                                                          www.nublado.org
 
-                                                  PRNG seed: 0xc4f34b2e5a3ae2d2
+                                                  PRNG seed: 0x45187781a791804c
 
                        **************************************23Jul25**************************************
                        *                                                                                 *
@@ -19,8 +19,7 @@
                        * #<<< mie_read_opc reading file -- silicate_ism_10.opc                      >>>> *
                        * metal     1.0000                                                                *
                        * iterate                                                                         *
-                       * save continuum, file="abell57.spectrum", units  eV                              *
-                       * save last lines, zone cumulative, file="abell57_1.emission"                     *
+                       * save last lines, zone cumulative, file="abell57_2.emission"                     *
                        *                                                                                 *
                        ***********************************************************************************
 
@@ -145,7 +144,6 @@
    abell57  
    Calculation stopped because lowest Te reached. Iteration 1 of 2
    The geometry is plane-parallel.
-  !Some input lines contained underscores, these were changed to spaces.
   !Suprathermal collisional ionization of H reached 16.46% of the local H ionization rate.
   !Charge transfer H => H+ reached 371030799.8% of the local H ionization rate.
   !Photoionization of upper level of Mg II 2798 reached 99.8% of the total Mg+ photo rate.
@@ -180,8 +178,7 @@
                        * abundances planetary nebula                                                     *
                        * metal     1.0000                                                                *
                        * iterate                                                                         *
-                       * save continuum, file="abell57.spectrum", units  eV                              *
-                       * save last lines, zone cumulative, file="abell57_1.emission"                     *
+                       * save last lines, zone cumulative, file="abell57_2.emission"                     *
                        * "O  2"  3728.81                                                                 *
                        * "Ne 3" 3868.76                                                                  *
                        * "O  3" 4363.21                                                                  *
@@ -193,6 +190,11 @@
                        * "h  1" 4101.73A                                                                 *
                        * "h  1" 4340.46A                                                                 *
                        * "He 1" 6678.15A                                                                 *
+                       * "N  2" 6583.45A                                                                 *
+                       * "Ne 3" 3967.47A                                                                 *
+                       * "H  1" 3889.02A                                                                 *
+                       * "H  1" 3970.08A                                                                 *
+                       * "O  1" 6300.30A                                                                 *
                        * end of lines                                                                    *
                        *********************************> Log(U): -2.77 <*********************************
 
@@ -964,7 +966,7 @@ Blnd                3478.95A   32.658    0.0016      N  2                915.612
    <a>:4.79E-04  erdeFe0.0E+00  Tcompt1.51E+02  Tthr2.50E+08  <Tden>: 5.99E+03  <dens>:2.66E-17  <MolWgt>1.24E+00
      Mean Jeans  l(cm)8.24E+17  M(sun)3.92E+03  smallest:     len(cm):6.72E+17  M(sun):2.13E+03  a_ox tran: -7.02
  Rion:1.002E+16  Dist:0.00E+00  Diam:0.000E+00
- Hatom level 70  HatomType: add  HInducImp  F  He tot level: 63  He2 level:   70  ExecTime    52.4
+ Hatom level 70  HatomType: add  HInducImp  F  He tot level: 63  He2 level:   70  ExecTime    52.7
  ConvrgError(%)  <eden>  0.169  MaxEden  0.986  <H-C>   0.16  Max(H-C)    0.50  <Press>   0.000  MaxPrs er  0.000
   Continuity(%)  chng Te   1.5  elec den   5.2  n(H2)    0.0  n(CO)        0.0
 
@@ -1057,6 +1059,10 @@ WARNING: no exact matching lines found for "O  3" 4960.91A
 Taking best match as "O  3                4958.91A"
 Possible ambiguity with "O  3                4931.23A"
 Possible ambiguity with "O  3                5006.84A"
+WARNING: no exact matching lines found for "H  1" 3889.02A
+Taking best match as "H  1                3889.05A"
+WARNING: no exact matching lines found for "H  1" 3970.08A
+Taking best match as "H  1                3970.07A"
  ####  1  Te:1.384E+04 Hden:1.122E+07 Ne:1.235E+07 R:1.000E+16 R-R0:4.258E+08 dR:8.516E+08 NTR: 14 Htot:6.536E-10 T912: 1.50e+04###
  Hydrogen      4.98e-03 9.95e-01 H+o/Hden 1.00e+00 3.08e-10 H-    H2 3.02e-13 1.58e-11 H2+ HeH+ 3.52e-10 Ho+ ColD 4.76e+13 9.51e+15
  Helium        2.67e-03 9.73e-01 2.45e-02 HeI 2s3S 3.84e-06 Comp H,C 1.51e-17 2.33e-18 Fill Fac 1.00e+00 Gam1/tot 9.99e-01
@@ -1150,7 +1156,6 @@ Possible ambiguity with "O  3                5006.84A"
    abell57  
    Calculation stopped because lowest Te reached. Iteration 2 of 2
    The geometry is plane-parallel.
-  !Some input lines contained underscores, these were changed to spaces.
   !Suprathermal collisional ionization of H reached 13.28% of the local H ionization rate.
   !Charge transfer H => H+ reached 1389058139.5% of the local H ionization rate.
   !Photoionization of upper level of Mg II 2798 reached 99.8% of the total Mg+ photo rate.
@@ -1185,8 +1190,7 @@ Possible ambiguity with "O  3                5006.84A"
                        * abundances planetary nebula                                                     *
                        * metal     1.0000                                                                *
                        * iterate                                                                         *
-                       * save continuum, file="abell57.spectrum", units  eV                              *
-                       * save last lines, zone cumulative, file="abell57_1.emission"                     *
+                       * save last lines, zone cumulative, file="abell57_2.emission"                     *
                        * "O  2"  3728.81                                                                 *
                        * "Ne 3" 3868.76                                                                  *
                        * "O  3" 4363.21                                                                  *
@@ -1198,6 +1202,11 @@ Possible ambiguity with "O  3                5006.84A"
                        * "h  1" 4101.73A                                                                 *
                        * "h  1" 4340.46A                                                                 *
                        * "He 1" 6678.15A                                                                 *
+                       * "N  2" 6583.45A                                                                 *
+                       * "Ne 3" 3967.47A                                                                 *
+                       * "H  1" 3889.02A                                                                 *
+                       * "H  1" 3970.08A                                                                 *
+                       * "O  1" 6300.30A                                                                 *
                        * end of lines                                                                    *
                        *********************************> Log(U): -2.77 <*********************************
 
@@ -1873,7 +1882,7 @@ He 2                4685.68A   31.980    0.0013      Fe 3                5011.26
    <a>:4.79E-04  erdeFe0.0E+00  Tcompt1.51E+02  Tthr2.47E+08  <Tden>: 5.98E+03  <dens>:2.66E-17  <MolWgt>1.24E+00
      Mean Jeans  l(cm)8.23E+17  M(sun)3.91E+03  smallest:     len(cm):6.72E+17  M(sun):2.13E+03  a_ox tran: -7.02
  Rion:1.002E+16  Dist:0.00E+00  Diam:0.000E+00
- Hatom level 70  HatomType: add  HInducImp  F  He tot level: 63  He2 level:   70  ExecTime    98.1
+ Hatom level 70  HatomType: add  HInducImp  F  He tot level: 63  He2 level:   70  ExecTime    98.7
  ConvrgError(%)  <eden>  0.157  MaxEden  0.973  <H-C>   0.15  Max(H-C)    0.50  <Press>   0.000  MaxPrs er  0.000
   Continuity(%)  chng Te   1.4  elec den   5.8  n(H2)    0.0  n(CO)        0.0
 
@@ -2122,5 +2131,5 @@ abell57
          1 mean step length searches/chemistry step
 ----------------------------------------------------
 
- Cloudy ends: 296 zones, 2 iterations. (single thread) ExecTime(s) 98.08
+ Cloudy ends: 296 zones, 2 iterations. (single thread) ExecTime(s) 98.74
  [Stop in cdMain at maincl.cpp:593, Cloudy exited OK]

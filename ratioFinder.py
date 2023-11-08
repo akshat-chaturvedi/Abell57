@@ -3,7 +3,7 @@ import numpy as np
 from astropy.table import Table
 import pandas as pd
 
-dat1 = Table.read("abell57_1.emission", format="ascii.tab")
+dat1 = Table.read("abell57_2.emission", format="ascii.tab")
 # print(dat1)
 dat1.rename_column("O  2 3728.81A", "O2")
 dat1.rename_column("Ne 3 3868.76A", "Ne3")
@@ -16,6 +16,41 @@ dat1.rename_column("H  1 4861.32A", "HBeta")
 dat1.rename_column("h  1 4101.73A", "HDelta")
 dat1.rename_column("h  1 4340.46A", "HGamma")
 dat1.rename_column("He 1 6678.15A", "He1 6678")
+dat1.rename_column("N  2 6583.45A", "N2 6583")
+dat1.rename_column("Ne 3 3967.47A", "Ne3 3968")
+dat1.rename_column("H  1 3889.02A", "HZeta")
+dat1.rename_column("H  1 3970.08A", "HEpsilon")
+dat1.rename_column("O  1 6300.30A", "O1 6300")
+
+lineRatios = []
+colNames = []
+for colName in dat1.colnames:
+    lineRatios.append(np.mean(dat1[colName][:100]/dat1["HBeta"][:100]))
+    colNames.append(colName)
+
+# print(colNames[1:])
+# print(lineRatios[1:])
+colNames = np.asarray(colNames[1:])
+lineRatios = np.asarray(lineRatios[1:])
+
+with open("abell57.in", "r") as f:
+    lines = f.readlines()
+    temp = lines[2].split(" ")[-2]
+    density = lines[4].split("=")[-1]
+    density = float(density.split(" ")[0])
+    metal = float(lines[7].split("     ")[1])
+    runParams = lines[:9]
+
+with open("abell57Params.dat", "w") as f:
+    for param in runParams:
+        f.write(param)
+    f.write("\n")
+    f.write("="*50+"\n")
+
+df = pd.DataFrame({'Species': colNames, 'Relative Flux': lineRatios*100})
+df.to_csv('abell57Params.dat', sep=',', mode='a', float_format='%.5f', header=True, index=False)
+
+'''
 
 alphaBetaRatio = np.mean(dat1["HAlpha"]/dat1["HBeta"])
 O3Ratio = np.mean((dat1["O3 5007"]+dat1["O3 4961"])/dat1["O3 4363"])
@@ -62,7 +97,7 @@ multiplier = 0
 # ax.legend(loc='upper right')
 # ax.set_ylim(0, 9)
 # fig.savefig("ratiosPlot2.jpg", bbox_inches="tight", dpi=300)
-'''
+
 dat2 = Table.read("abell57.spectrum", format="ascii.tab")
 # a = dat2["line"][0]
 print(dat2["Cont  nu"][5381])

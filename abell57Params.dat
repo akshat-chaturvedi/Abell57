@@ -1,0 +1,28 @@
+title abell57
+sphere
+table star rauch H-Ni solar 4.95424 LOG
+luminosity solar =     4.0000
+HDEN=7.05 LOG
+radius = 16
+abundances planetary nebula          
+metal     1.0000
+iterate
+
+==================================================
+Species,Relative Flux
+O2,0.09699
+Ne3,144.97491
+O3 4363,75.69907
+O3 4961,49.58546
+O3 5007,147.94073
+He1 5876,18.25874
+HAlpha,281.19234
+HBeta,100.00000
+HDelta,26.90454
+HGamma,48.25107
+He1 6678,4.01543
+N2 6583,2.36163
+Ne3 3968,44.00244
+HZeta,11.70673
+HEpsilon,17.15024
+O1 6300,1.08927
