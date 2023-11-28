@@ -1,12 +1,16 @@
-title abell57
+title abell57CEK
 sphere
 table star rauch H-Ni solar 4.95424 LOG
 luminosity solar =     4.0000
-HDEN=7.05 LOG
+HDEN=7.010000 LOG vary
 radius = 16
-abundances planetary nebula          
+abundances GASS
+#element scale factor neon 2
 metal     1.0000
 iterate
+optimize lines
+"Ne 3" 3868.76 intensity = 2.768
+end of lines
 save last lines, zone cumulative, file="abell57_2.emission"
 "Ne 3" 3868.76
 "H  1" 3889.02A

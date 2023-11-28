@@ -1,17 +1,19 @@
 title abell57CEK
-sphere
-table star rauch H-Ni solar 4.95424 LOG
-LUMINOSITY 37.582699 LOG range -8.517175 6.866279
-HDEN=7.01 LOG
-RADIUS= 15.878391 LOG
+#open
+blackbody 90000K
+luminosity solar =     4.2
+HDEN=7.3 LOG
+RADIUS= 15.5 LOG
 abundances GASS
 #element scale factor neon 2
-metal     1.0000
+metal     1.2
 iterate
-optimize lines
-"Ne 3" 3868.76 intensity = 2.651
-"O  3" 5006.84 intensity = 1.2
-end of lines
+#optimize increments 0.2
+#optimize file="ebv085Optimal.in"
+#optimize lines
+#"Ne 3" 3868.76 intensity = 2.651
+#"O  3" 5006.84 intensity = 1.2
+#end of lines
 save last lines, zone cumulative, file="abell57_085.emission"
 "Ne 3" 3868.76
 "H  1" 3889.02A

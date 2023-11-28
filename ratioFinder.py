@@ -6,7 +6,7 @@ import pandas as pd
 dat1 = Table.read("abell57_2.emission", format="ascii.tab")
 # print(dat1)
 dat1.rename_column("O  2 3728.81A", "O2")
-dat1.rename_column("Ne 3 3868.76A", "Ne3")
+dat1.rename_column("Ne 3 3868.76A", "Ne3 3869")
 dat1.rename_column("O  3 4363.21A", "O3 4363")
 dat1.rename_column("O  3 4960.91A", "O3 4961")
 dat1.rename_column("O  3 5006.84A", "O3 5007")
@@ -38,7 +38,7 @@ with open("abell57.in", "r") as f:
     temp = lines[2].split(" ")[-2]
     density = lines[4].split("=")[-1]
     density = float(density.split(" ")[0])
-    metal = float(lines[7].split("     ")[1])
+    metal = float(lines[8].split("     ")[1])
     runParams = lines[:9]
 
 with open("abell57Params.dat", "w") as f:
@@ -50,54 +50,91 @@ with open("abell57Params.dat", "w") as f:
 df = pd.DataFrame({'Species': colNames, 'Relative Flux': lineRatios*100})
 df.to_csv('abell57Params.dat', sep=',', mode='a', float_format='%.5f', header=True, index=False)
 
-'''
-
 alphaBetaRatio = np.mean(dat1["HAlpha"]/dat1["HBeta"])
 O3Ratio = np.mean((dat1["O3 5007"]+dat1["O3 4961"])/dat1["O3 4363"])
 O3HBetaRatio = np.mean(dat1["O3 5007"]/dat1["HBeta"])
 He5876HBetaRatio = np.mean(dat1["He1 5876"]/dat1["HBeta"])
+Ne33869HBetaRatio = np.mean(dat1["Ne3 3869"]/dat1["HBeta"])
+O34363HBetaRatio = np.mean(dat1["O3 4363"]/dat1["HBeta"])
+O34960HBetaRatio = np.mean(dat1["O3 4961"]/dat1["HBeta"])
+Ne33968HBetaRatio = np.mean(dat1["Ne3 3968"]/dat1["HBeta"])
+gammaBetaRatio = np.mean(dat1["HGamma"]/dat1["HBeta"])
+deltaBetaRatio = np.mean(dat1["HDelta"]/dat1["HBeta"])
+He6678HBetaRatio = np.mean(dat1["He1 6678"]/dat1["HBeta"])
+O16300HBetaRatio = np.mean(dat1["O1 6300"]/dat1["HBeta"])
+N26584HBetaRatio = np.mean(dat1["N2 6583"]/dat1["HBeta"])
+
 
 with open("abell57.in", "r") as f:
     lines = f.readlines()
     temp = lines[2].split(" ")[-2]
-    density=lines[4].split("=")[-1]
+    density = lines[4].split("=")[-1]
 
-hebAlphaBetaRatio = 2.81
-hebO3HBetaRatio = 1.311
-hebHe5876HBetaRatio = 0.168
+hebAlphaBetaRatio = 2.768
+hebO3HBetaRatio = 1.095
+hebHe5876HBetaRatio = 0.143
+hebNe33869HBetaRatio = 2.782
+hebO34363HBetaRatio = 0.742
+hebO34960HBetaRatio = 0.397
+hebNe33968HBetaRatio = 0.685
+hebGammaBetaRatio = 0.462
+hebDeltaBetaRatio = 0.246
+hebHe6678HBetaRatio = 0.013
+hebO16300HBetaRatio = 0.019
+hebN26584HBetaRatio = 0.040
 
-ratios = ["HAlpha", "O III 5007", "He I 5876"]
-values = [alphaBetaRatio, O3Ratio, O3HBetaRatio, He5876HBetaRatio]
+'''
+E(B-V) = 0.95
+H-a              6564.25     276.8
+H-b              4862.32     100.0
+H-g              4341.10      46.2
+H-d              4102.32      24.6
+[O III] 4363     4363.88      74.2
+[O III] 4959     4959.85      39.7
+[O III] 5007     5007.69     109.5
+[Ne III] 3869    3869.49     278.2
+He I 5876        5876.62      14.3
+[N II] 6584      6584.93       4.0
+He I 6678        6679.38       1.3
+'''
+
+ratios = ["HAlpha", "O III 5007", "He I 5876", "Ne III 3869", "O III 4363", "O III 4960", "Ne III 3968", "HGamma",
+          "HDelta", "He 6678", "O I 6300", "N II 6584"]
+values = [alphaBetaRatio, O3Ratio, O3HBetaRatio, He5876HBetaRatio, Ne33869HBetaRatio, O34363HBetaRatio, O34960HBetaRatio,
+          Ne33968HBetaRatio, gammaBetaRatio, deltaBetaRatio, He6678HBetaRatio, O16300HBetaRatio, N26584HBetaRatio]
 
 # values1 = [alphaBetaRatio, O3HBetaRatio, He5876HBetaRatio]
 # values2 = [hebAlphaBetaRatio, hebO3HBetaRatio, hebHe5876HBetaRatio]
 
 ratioDict = {
-    'CLOUDY': (alphaBetaRatio, O3HBetaRatio, He5876HBetaRatio),
-    'HEB': (hebAlphaBetaRatio, hebO3HBetaRatio, hebHe5876HBetaRatio)
+    'CLOUDY': (alphaBetaRatio, O3HBetaRatio, He5876HBetaRatio, Ne33869HBetaRatio, O34363HBetaRatio, O34960HBetaRatio,
+               Ne33968HBetaRatio, gammaBetaRatio, deltaBetaRatio, He6678HBetaRatio, O16300HBetaRatio, N26584HBetaRatio),
+    'HEB': (hebAlphaBetaRatio, hebO3HBetaRatio, hebHe5876HBetaRatio, hebNe33869HBetaRatio, hebO34363HBetaRatio,
+            hebO34960HBetaRatio, hebNe33968HBetaRatio, hebGammaBetaRatio, hebDeltaBetaRatio, hebHe6678HBetaRatio,
+            hebO16300HBetaRatio, hebN26584HBetaRatio)
 }
 
 x = np.arange(len(ratios))  # the label locations
 width = 0.25  # the width of the bars
 multiplier = 0
 
-# fig, ax = plt.subplots(layout='constrained')
-#
-# for dataset, ratio in ratioDict.items():
-#     offset = width * multiplier
-#     rects = ax.bar(x + offset, ratio, width, label=dataset)
-#     ax.bar_label(rects, padding=3)
-#     multiplier += 1
+fig, ax = plt.subplots(layout='constrained')
+
+for dataset, ratio in ratioDict.items():
+    offset = width * multiplier
+    rects = ax.bar(x + offset, ratio, width, label=dataset)
+    ax.bar_label(rects, padding=3, rotation=90, fontsize="small")
+    multiplier += 1
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-# ax.set_ylabel(r'Line Strength Relative to H$\beta$')
-# ax.set_title('Emission Line Ratios')
-# ax.text(2, 7, f'T={temp} LOG\n den = {density}', fontsize=12, ha='center', va='center')
-# ax.set_xticks(x + width/2, ratios)
-# ax.legend(loc='upper right')
-# ax.set_ylim(0, 9)
-# fig.savefig("ratiosPlot2.jpg", bbox_inches="tight", dpi=300)
-
+ax.set_ylabel(r'Line Strength Relative to H$\beta$')
+ax.set_title('CEK Emission Line Ratios')
+# ax.text(10, 2, f'T={temp} LOG\n den = {density}', fontsize=12, ha='center', va='center')
+ax.set_xticks(x + width/2, ratios, rotation=90)
+ax.legend(loc='upper right')
+ax.set_ylim(0, 4)
+fig.savefig("ratiosPlot3.jpg", bbox_inches="tight", dpi=300)
+'''
 dat2 = Table.read("abell57.spectrum", format="ascii.tab")
 # a = dat2["line"][0]
 print(dat2["Cont  nu"][5381])

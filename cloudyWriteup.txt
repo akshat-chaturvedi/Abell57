@@ -1,0 +1,27 @@
+For the nebular analysis of both the surrounding planetary nebula and the compact emission knot, we turned to the
+photoionization modelling program \texttt{CLOUDY} \cite{ferland_cloudy}. Our goal for using CLOUDY is to create a
+model of the two objects such that we can then find the [metallicity/density?]. This(these) properties cannot be directly
+inferred from the spectrum of the PN or the CEK due to insufficient data.
+
+The process used in CLOUDY is relatively straightforward. Given a set of parameters defining the nebula, such as the
+temperature profile, density, geometry, radius and luminosity of the central star, the program is able to model what
+an observed spectrum of such a nebula should look like.
+
+Alternatively, if one knows what the observed spectrum look like, they can vary the parameter space to match the observed
+and modelled spectrum to infer the unknown properties.
+
+6.1 Abell 57 Planetary Nebula
+In the case of the PN, the temperature profile of the central star has been derived, as explained in Section
+\label{sec:5.1} [the section label is missing] to be 90000$\pm$10000 K, the radius is known to be 0.19 pc [I wasn't sure
+ where this value came from], [assuming we knew the density, I can add a statement for density here].
+
+Using CLOUDY, we varied the luminosity and density, while using the optimize function to find models that would best
+fit the known [O III] 5007 and [N II] 6583 fluxes (relative to H$\beta$).
+
+Our CLOUDY analysis integrates over the entire nebula in 166 individual zones (spherical shells of varying radii), and due to
+the [reason for going only till the first hundred shells or so], we used the mean absolute fluxes of the various species
+only upto the first 100 shells. We then found the relative fluxes to compare to the known spectrum.
+
+\subsubsection{Constraints On Parameter Space}
+The known central star temperature puts a constraint on the modelled fluxes of the [O II] doublet ([O II] 3726 and
+[O II] 3728) relative to H$\beta$ with a physical range of [I'm not sure what numbers would make physical sense here]

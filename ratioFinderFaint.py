@@ -48,7 +48,7 @@ alphaBetaRatio = np.mean(dat1["HAlpha"][:100]/dat1["HBeta"][:100])
 O3Ratio = np.mean((dat1["O3 5007"][:100]+dat1["O3 4961"][:100])/dat1["O3 4363"][:100])
 O3HBetaRatio = np.mean(dat1["O3 5007"][:100]/dat1["HBeta"][:100])
 He5876HBetaRatio = np.mean(dat1["He1 5876"][:100]/dat1["HBeta"][:100])
-Ne3689HBetaRatio = np.mean(dat1["Ne3 3868"][:100]/dat1["HBeta"][:100])
+Ne3869HBetaRatio = np.mean(dat1["Ne3 3868"][:100] / dat1["HBeta"][:100])
 ArIV4711HBetaRatio = np.mean(dat1["Ar4 4711"][:100]/dat1["HBeta"][:100])
 O2DoubletRatio = np.mean((dat1["O2 3726"][:100]+dat1["O2 3729"][:100])/dat1["HBeta"][:100])
 N2HBetaRatio = np.mean(dat1["N2 6583"][:100]/dat1["HBeta"][:100])
@@ -83,14 +83,14 @@ hebN2HBetaRatio = 0.056
 hebS2HBetaRatio = 0.01
 
 ratios = ["HAlpha", "O III 5007", "He I 5876", "Ne III 3689", "Ar IV 4711", "O2 Doublet", "N II 6584", "S II 6717"]
-values = [alphaBetaRatio, O3Ratio, O3HBetaRatio, He5876HBetaRatio, Ne3689HBetaRatio, ArIV4711HBetaRatio, O2DoubletRatio,
+values = [alphaBetaRatio, O3Ratio, O3HBetaRatio, He5876HBetaRatio, Ne3869HBetaRatio, ArIV4711HBetaRatio, O2DoubletRatio,
           N2HBetaRatio, S2HBetaRatio]
 
 # values1 = [alphaBetaRatio, O3HBetaRatio, He5876HBetaRatio]
 # values2 = [hebAlphaBetaRatio, hebO3HBetaRatio, hebHe5876HBetaRatio]
 
 ratioDict = {
-    'CLOUDY': (alphaBetaRatio, O3HBetaRatio, He5876HBetaRatio, Ne3689HBetaRatio, ArIV4711HBetaRatio, O2DoubletRatio,
+    'CLOUDY': (alphaBetaRatio, O3HBetaRatio, He5876HBetaRatio, Ne3869HBetaRatio, ArIV4711HBetaRatio, O2DoubletRatio,
                N2HBetaRatio, S2HBetaRatio),
     'HEB': (hebAlphaBetaRatio, hebO3HBetaRatio, hebHe5876HBetaRatio, hebNe3689HBetaRatio, hebArIV4711HBetaRatio,
             hebO2DoubletRatio, hebN2HBetaRatio, hebS2HBetaRatio)

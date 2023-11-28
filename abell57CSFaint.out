@@ -1,7 +1,7 @@
                                                           Cloudy 23.00
                                                          www.nublado.org
 
-                                                  PRNG seed: 0x841c9d28abcb76db
+                                                  PRNG seed: 0x26cd9579a15dbb00
 
                        **************************************23Jul25**************************************
                        *                                                                                 *
@@ -1186,7 +1186,7 @@ He 1                3704.90A   31.809    0.0014      Ne 4                1601.45
    <a>:1.29E-07  erdeFe0.0E+00  Tcompt2.71E+10  Tthr2.96E+10  <Tden>: 1.02E+04  <dens>:1.10E-21  <MolWgt>6.90E-01
      Mean Jeans  l(cm)1.71E+20  M(sun)1.45E+06  smallest:     len(cm):1.07E+20  M(sun):3.51E+05  a_ox tran:  0.00
  Rion:7.927E+17  Dist:0.00E+00  Diam:0.000E+00
- Hatom level 70  HatomType: add  HInducImp  F  He tot level: 63  He2 level:   70  ExecTime    34.5
+ Hatom level 70  HatomType: add  HInducImp  F  He tot level: 63  He2 level:   70  ExecTime    34.0
  ConvrgError(%)  <eden>  0.087  MaxEden  0.438  <H-C>   0.11  Max(H-C)    0.46  <Press>   0.000  MaxPrs er  0.000
   Continuity(%)  chng Te   3.4  elec den   4.5  n(H2)    0.0  n(CO)        0.0
 
@@ -2331,7 +2331,7 @@ He 2                3923.44A   31.886    0.0019      O  1                1304.86
    <a>:1.29E-07  erdeFe0.0E+00  Tcompt2.71E+10  Tthr2.95E+10  <Tden>: 1.02E+04  <dens>:1.10E-21  <MolWgt>6.90E-01
      Mean Jeans  l(cm)1.71E+20  M(sun)1.44E+06  smallest:     len(cm):1.06E+20  M(sun):3.47E+05  a_ox tran:  0.00
  Rion:7.924E+17  Dist:0.00E+00  Diam:0.000E+00
- Hatom level 70  HatomType: add  HInducImp  F  He tot level: 63  He2 level:   70  ExecTime    62.3
+ Hatom level 70  HatomType: add  HInducImp  F  He tot level: 63  He2 level:   70  ExecTime    61.3
  ConvrgError(%)  <eden>  0.077  MaxEden  0.408  <H-C>   0.10  Max(H-C)    0.41  <Press>   0.000  MaxPrs er  0.000
   Continuity(%)  chng Te   3.2  elec den   5.2  n(H2)    0.0  n(CO)        0.0
 
@@ -2761,5 +2761,5 @@ abell57CSFaint
          1 mean step length searches/chemistry step
 ----------------------------------------------------
 
- Cloudy ends: 166 zones, 2 iterations. (single thread) ExecTime(s) 62.29
+ Cloudy ends: 166 zones, 2 iterations. (single thread) ExecTime(s) 61.26
  [Stop in cdMain at maincl.cpp:593, Cloudy exited OK]
