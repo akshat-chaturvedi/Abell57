@@ -1,18 +1,25 @@
 title abell57CEK
 sphere
-table star rauch H-Ni solar 4.95424 LOG
-LUMINOSITY 37.582699 LOG range -8.517175 6.866279
-HDEN=7.01 LOG
-RADIUS= 15.878391 LOG
-abundances GASS
-#element scale factor neon 2
-metal     1.0000
+table SED "abell57Unique.sed"
+LUMINOSITY 36.2790599913 LOG
+HDEN=7.358073 LOG
+RADIUS= 15.136085 LOG
+optimize range from 13 to 16
+optimize increments 0.25
+abundances planetary nebula
+METALS= 2.5 LOG
 iterate
 optimize lines
-"Ne 3" 3868.76 intensity = 2.651
-"O  3" 5006.84 intensity = 1.2
+"Ne 3" 3868.76 intensity = 2.73
+"O  3" 5006.84 intensity = 1.06
+"O  3" 4363.21 intensity = 0.778
+"O  3" 4960.91 intensity = 0.366
+"Ne 3" 3967.47 intensity = 0.563
+"O  1" 6300.30 intensity = 0.015
+"N  2" 6583.45 intensity = 0.017
 end of lines
-save last lines, zone cumulative, file="abell57_085.emission"
+save last lines, zone cumulative, file="abell57_3.emission"
+"O  2" 3726
 "Ne 3" 3868.76
 "H  1" 3889.02A
 "Ne 3" 3967.47A
@@ -29,4 +36,6 @@ Blnd 5875.66A
 "N  2" 6583.45A
 "He 1" 6678.15A
 "O  2"  3728.81
+"He 2" 4686.00A
+"He 2" 5411.00A
 end of lines

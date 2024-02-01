@@ -1,0 +1,36 @@
+title abell57CEK
+sphere
+table star rauch H-Ni solar 4.95424 LOG
+luminosity solar =     4.0000
+HDEN=7.01 LOG
+#optimize range from 6.5 to 7.5
+#optimize increments 0.2
+#optimize file="ebv100Optimal.in"
+radius = 16
+abundances GASS
+#element scale factor neon 2
+metal     1.0000
+iterate
+print citation
+#optimize lines
+#"Ne 3" 3868.76 intensity = 2.920
+#"O  3" 5006.84 intensity = 1.088
+#end of lines
+save last lines, zone cumulative, file="abell57_100.emission"
+"Ne 3" 3868.76
+"H  1" 3889.02A
+"Ne 3" 3967.47A
+"H  1" 3970.08A
+"h  1" 4101.73A
+"h  1" 4340.46A
+"O  3" 4363.21
+"H  1" 4861.32A
+"O  3" 4960.91
+"O  3" 5006.84
+Blnd 5875.66A
+"O  1" 6300.30A
+"H  1" 6562.80A
+"N  2" 6583.45A
+"He 1" 6678.15A
+"O  2"  3728.81
+end of lines

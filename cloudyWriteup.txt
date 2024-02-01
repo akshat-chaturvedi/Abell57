@@ -13,15 +13,17 @@ and modelled spectrum to infer the unknown properties.
 6.1 Abell 57 Planetary Nebula
 In the case of the PN, the temperature profile of the central star has been derived, as explained in Section
 \label{sec:5.1} [the section label is missing] to be 90000$\pm$10000 K, the radius is known to be 0.19 pc [I wasn't sure
- where this value came from], [assuming we knew the density, I can add a statement for density here].
+ where this value came from], and using the diagnostics obtained via the [S II] lines, we are able to infer a density in the range of 0-100 cm^-3.
 
-Using CLOUDY, we varied the luminosity and density, while using the optimize function to find models that would best
-fit the known [O III] 5007 and [N II] 6583 fluxes (relative to H$\beta$).
+Using CLOUDY, we varied the metallicity and the radius, while keeping all other parameters fixed. We assumed standard CLOUDY
+solar abundances which were obtained from (N. Grevesse, M. Asplund, A. J. Sauval, and P. Scott. The chemical composition of the Sun. Ap&SS, 328: 179–183, July 2010. doi: 10.1007/s10509-010-0288-z.)
+We then made use of the CLOUDY optimizer to find the radius and metallicity that best fit the known emission line ratios, relative to H Beta.
 
-Our CLOUDY analysis integrates over the entire nebula in 166 individual zones (spherical shells of varying radii), and due to
+Our CLOUDY analysis integrates over the entire nebula in 180 individual zones (spherical shells of varying radii), and due to
 the [reason for going only till the first hundred shells or so], we used the mean absolute fluxes of the various species
-only upto the first 100 shells. We then found the relative fluxes to compare to the known spectrum.
+only upto the first 160 shells. We then found the relative fluxes using the mean flux from these shells to then compare to the known values from the spectrum.
 
 \subsubsection{Constraints On Parameter Space}
 The known central star temperature puts a constraint on the modelled fluxes of the [O II] doublet ([O II] 3726 and
-[O II] 3728) relative to H$\beta$ with a physical range of [I'm not sure what numbers would make physical sense here]
+[O II] 3728) relative to H$\beta$ with a physical range of [I'm not sure what numbers would make physical sense here], and
+as mentioned earlier, the [S II] lines offer a measure of the density of the PN (maybe an explanation as to how we do this?).

@@ -1,0 +1,50 @@
+title abell57PNFaint
+sphere
+#temp = 100000 K
+LUMINOSITY 36.2790599913 LOG
+HDEN=3.0 LOG
+RADIUS= 17.091751 LOG
+abundances planetary nebula
+table SED "abell57Unique.sed"
+METALS= -0.5 LOG
+iterate
+#optimize lines
+#"O  3" 5006.84 intensity = 9.838
+#"H  1" 6562.80A intensity = 2.861
+#"He 1" 4471.68 intensity = 0.034
+#"Ne 3" 3868.76 intensity = 0.876
+#"Ar 4" 4711.35A intensity = 0.055
+#"S  2" 6716.44A intensity = 0.030
+#end of lines
+#optimize file="faintOptimal.txt"
+print zone 5
+save last lines, zone cumulative, file="abell57FaintPN.emission"
+"O  2" 3726
+"O  2"  3728.81
+"O  2" 3729
+"H 1" 3835.39A
+"Ne 3" 3868.76
+"He 1" 3888.6
+"H  1" 3889.02
+"Ne 3" 3967.47A
+"H  1" 3970.08
+"h  1" 4101.73A
+"H  1" 4340.47
+"O  3" 4363.21
+"He 1" 4471.68
+"He 2" 4685.80
+"Ar 4" 4711.35A
+"H  1" 4861.32A
+"O  3" 4960.91
+"O  3" 5006.84
+Blnd 5875.66A
+"H  1" 6562.80A
+"N  2" 6583.45A
+"He 1" 6678.15A
+"S  2" 6716.44A
+"H  1" 3798.94
+"He 2" 5411.52
+"Ar 4" 4740.12A
+"S  2" 6730.81A
+end of lines
+

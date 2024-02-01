@@ -1,0 +1,17 @@
+Species	Relative Flux	Absolute Flux	Comments
+H Alpha	308.61	1.702e-14	
+H Beta	100.00	5.514e-15	
+H Gamma	-464.19	-2.559e-14	
+H Delta	-397.50	-2.192e-14	
+H Epsilon	-391.23	-2.157e-14	HEpsilon is blended with [Ne III] 3967
+H Zeta	-492.21	-2.714e-14	
+He I 5876	-249.39	-1.375e-14	Unknown absorption feature in model
+He I 6678	-110.03	-6.067e-15	Unsure, had to shift model to the blueward
+O III 4363	-513.34	-2.830e-14	
+Ne III 3868	-770.77	-4.250e-14	
+O III 4960	-640.29	-3.530e-14	Had to include feature at 4944 A due to interpolation requirements
+O III 5007	59.08	3.257e-15	
+N II 6583	-190.53	-1.050e-14	Almost blended with H Alpha, includes some flux from that
+Ne III 3968	-661.24	-3.646e-14	Blended with H Epsilon
+He II 4686	-471.24	-2.598e-14	
+He II 5411	-43.69	-2.409e-15	Very narrow emission line

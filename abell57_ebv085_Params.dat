@@ -1,0 +1,28 @@
+title abell57CEK
+#open
+blackbody 90000K
+luminosity solar =     4.2
+HDEN=7.3 LOG
+RADIUS= 15.5 LOG
+abundances GASS
+#element scale factor neon 2
+metal     1.2
+
+==================================================
+Species,Relative Flux
+Ne3 3869,106.35517
+HZeta,12.66467
+Ne3 3968,32.28077
+HEpsilon,18.51740
+HDelta,28.85998
+HGamma,49.84324
+O3 4363,97.50654
+HBeta,100.00000
+O3 4961,40.49391
+O3 5007,120.81640
+He1 5876,12.50308
+O1 6300,0.00744
+HAlpha,293.40724
+N2 6583,0.02688
+He1 6678,2.64477
+O2,0.00484

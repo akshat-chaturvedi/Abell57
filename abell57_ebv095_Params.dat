@@ -1,0 +1,28 @@
+title abell57CEK
+sphere
+table star rauch H-Ni solar 4.95424 LOG
+luminosity solar =     4.0000
+HDEN=7.010000 LOG
+radius = 16
+abundances GASS
+#element scale factor neon 2
+metal     1.0000
+
+==================================================
+Species,Relative Flux
+Ne3 3869,122.35887
+HZeta,11.70693
+Ne3 3968,37.13817
+HEpsilon,17.15957
+HDelta,26.94674
+HGamma,48.25902
+O3 4363,96.10818
+HBeta,100.00000
+O3 4961,65.72750
+O3 5007,196.10352
+He1 5876,15.77572
+O1 6300,0.96982
+HAlpha,280.83178
+N2 6583,0.80767
+He1 6678,3.42722
+O2,0.09957
