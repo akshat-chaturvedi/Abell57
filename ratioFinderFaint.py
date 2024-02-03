@@ -251,8 +251,8 @@ for i, value in enumerate(obsVals):
         ax1.text(observed_positions[i], value/10 + 5, f'{value}', ha='center', va='bottom', fontsize=12, rotation=90)
 # Adding labels and title
 ax1.set_xlabel('Species', fontsize=16)
-ax1.set_ylabel('Relative Line Strength Ratios', fontsize=16)
-ax1.set_title('Emission-Line Ratios (Hβ = 100)', fontsize=18)
+ax1.set_ylabel('Line Strength Relative to Hβ = 100', fontsize=16)
+ax1.set_title('Planetary Nebula Emission-Line Ratios', fontsize=18)
 plt.tick_params(axis='y', which='major', labelsize=14)
 plt.tick_params(axis='x', which='major', labelsize=11.5)
 
@@ -260,9 +260,9 @@ plt.tick_params(axis='x', which='major', labelsize=11.5)
 ax1.set_xticks(cloudy_positions + bar_width / 2)
 ax1.set_xticklabels(elements)
 
-ax1.set_ylim(0,320)
+ax1.set_ylim(0, 320)
 # Adding legend
-ax1.legend()
+ax1.legend(loc="upper center")
 
 # Show the plot
-plt.savefig("PNPLOTSTRIAL.jpg", bbox_inches="tight", dpi=300)
+plt.savefig("PNPLOTSTRIAL.pdf", bbox_inches="tight", dpi=300)

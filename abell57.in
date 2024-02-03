@@ -1,11 +1,11 @@
 title abell57CEK
-sphere
+#sphere
 table SED "abell57Unique.sed"
 LUMINOSITY 36.2790599913 LOG
-HDEN=7.358073 LOG
-RADIUS = 15.875857 LOG
+HDEN=7.2 LOG
+RADIUS 15.5 depth 10 LOG
 abundances planetary nebula
-METALS= 2.5 LOG
+METALS= 2 linear
 iterate
 #optimize lines
 #"Ne 3" 3868.76 intensity = 2.73
@@ -15,11 +15,13 @@ iterate
 #"Ne 3" 3967.47 intensity = 0.563
 #"O  1" 6300.30 intensity = 0.015
 #"N  2" 6583.45 intensity = 0.017
+#"O  1" 6300.30 intensity = 0.015
 #end of lines
 save last lines, zone cumulative, file="abell57_3.emission"
 "O  2" 3726
 "Ne 3" 3868.76
 "H  1" 3889.02A
+"He 1" 3888.6
 "Ne 3" 3967.47A
 "H  1" 3970.08A
 "h  1" 4101.73A

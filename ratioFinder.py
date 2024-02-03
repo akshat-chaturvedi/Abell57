@@ -24,6 +24,7 @@ dat1.rename_column("O  1 6300.30A", "O1 6300")
 dat1.rename_column("He 2 5411.00A", "He2 5411")
 dat1.rename_column("He 2 4686.00A", "He2 4686")
 dat1.rename_column("O  2 3726.00A", "O2 3726")
+dat1.rename_column("He 1 3888.60A", "He1 3889")
 
 lineRatios = []
 colNames = []
@@ -92,6 +93,7 @@ hebO16300HBetaRatio = 0.015*100
 hebN26584HBetaRatio = 0.017*100
 hebEpsilonHBetaRatio = 0.148*100
 hebO2DoubletRatio = 0.292*100
+hebHe4686HBetaRatio = 0.159*100
 
 
 '''
@@ -129,8 +131,8 @@ ratios = ["[O II]\nDoublet", "[Ne III]\n 3869", "[Ne III]\n 3968", "H$\delta$\n 
           "[O III]\n 4363", "[O III]\n 4960", "[O III]\n 5007", "He I\n 5876", "[O I]\n 6300",  r"H$\alpha$"+"\n 6562",
           "[N II]\n 6583", "He I\n 6678"]
 
-ratios1 = ["[O II]\nDoublet", "[Ne III]\n 3869", "[Ne III]\n 3968", "H$\delta$\n 4101", "H $\gamma$\n 4340",
-           "[O III]\n 4363", "[O III]\n 4960", "[O III]\n 5007", "He I\n 5876", r"H$\alpha$"+"\n 6562", "He I\n 6678"]
+ratios1 = ["[Ne III]\n 3869", "[O III]\n 4363", "He II\n 4686", "[O III]\n 4959", "[O III]\n 5007", "He I\n 5875",
+           r"H$\alpha$"+"\n 6562", "He I\n 6678"]
 # values = [""]
 
 # values1 = [alphaBetaRatio, O3HBetaRatio, He5876HBetaRatio]
@@ -146,45 +148,97 @@ ratioDict = {
 }
 
 ratioDict1 = {
-    'CLOUDY': (O2DoubletRatio*100, Ne33869HBetaRatio*100, Ne33968HBetaRatio*100, deltaBetaRatio*100, gammaBetaRatio*100,
-               O34363HBetaRatio*100, O34960HBetaRatio*100, O3HBetaRatio*100, He5876HBetaRatio*100, alphaBetaRatio*100,
-               He6678HBetaRatio * 100),
-    'OBSERVED': (hebO2DoubletRatio, hebNe33869HBetaRatio, hebNe33968HBetaRatio, hebDeltaBetaRatio, hebGammaBetaRatio,
-                 hebO34363HBetaRatio, hebO34960HBetaRatio, hebO3HBetaRatio, hebHe5876HBetaRatio, hebAlphaBetaRatio,
-                 hebHe6678HBetaRatio)
+    'CLOUDY': (Ne33869HBetaRatio*100, O34363HBetaRatio*100, He4686HBetaRatio*100, O34960HBetaRatio*100,
+               O3HBetaRatio*100, He5876HBetaRatio*100, alphaBetaRatio*100, He6678HBetaRatio * 100),
+    'OBSERVED': (hebNe33869HBetaRatio, hebO34363HBetaRatio, hebHe4686HBetaRatio, hebO34960HBetaRatio, hebO3HBetaRatio,
+                 hebHe5876HBetaRatio, hebAlphaBetaRatio, hebHe6678HBetaRatio)
 }
 
 dictList = [ratioDict1]
 
-counter = 91
-x = np.arange(len(ratios1))  # the label locations
-spacing = 0.4
-width = 0.25  # the width of the bars
-multiplier = 0
-yErr = np.array([[hebO2DoubletRatio, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]])
+# counter = 91
+# x = np.arange(len(ratios1))  # the label locations
+# spacing = 0.4
+# width = 0.25  # the width of the bars
+# multiplier = 0
+# # yErr = np.array([[hebO2DoubletRatio, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0],
+# #                  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]])
+#
+# fig, ax = plt.subplots(layout='constrained')
+#
+# for dataset, ratio in ratioDict1.items():
+#     # print(x, ratio)
+#     offset = width * multiplier
+#     rects = ax.bar(x + offset, ratio, width, label=dataset)
+#     ax.bar_label(rects, padding=3, rotation=90, fontsize="x-small")
+#     multiplier += 1
+#
+# # Add some text for labels, title and custom x-axis tick labels, etc.
+# ax.set_ylabel('Line Strength Relative to Hβ = 100', fontsize=16)
+# ax.set_xlabel('Species', fontsize=16)
+# ax.set_title('CEK Emission-Line Ratios', fontsize=18)
+# # ax.text(10, 2, f'T={temp} LOG\n den = {density}', fontsize=12, ha='center', va='center')
+# ax.set_xticks(x + width/2, ratios1, fontsize="small")
+# ax.legend(loc='upper left')
+# ax.set_ylim(0, 350)
+# fig.savefig(f"newReddenings/ratiosPlot_ebv0{counter}.jpg", bbox_inches="tight", dpi=300)
+# # if counter <= 90:
+# #     counter += 5
+# # if counter > 90:
+# #     counter = 925
 
-fig, ax = plt.subplots(layout='constrained')
+cloudy_values = ratioDict1['CLOUDY']
+cloudyVals = [208, 93.8, 4.9, 57.8, 173, 16.7, 274, 3.8]
+observed_values = ratioDict1['OBSERVED']
+obsVals = [273, 77.8, 15.9, 36.6, 106, 14.4, 274, 2.8]
 
-for dataset, ratio in ratioDict1.items():
-    # print(x, ratio)
-    offset = width * multiplier
-    rects = ax.bar(x + offset, ratio, width, label=dataset, yerr=yErr)
-    ax.bar_label(rects, padding=3, rotation=90, fontsize="x-small")
-    multiplier += 1
+# Elements
+elements = ratios1
 
-# Add some text for labels, title and custom x-axis tick labels, etc.
-ax.set_ylabel(r'Line Strength Relative to H$\beta$')
-ax.set_title(f'CEK Emission Line Ratios $E(B-V)$ = 0.{counter}')
-# ax.text(10, 2, f'T={temp} LOG\n den = {density}', fontsize=12, ha='center', va='center')
-ax.set_xticks(x + width/2, ratios1, fontsize="small")
-ax.legend(loc='upper right')
-ax.set_ylim(0, 380)
-fig.savefig(f"newReddenings/ratiosPlot_ebv0{counter}.jpg", bbox_inches="tight", dpi=300)
-# if counter <= 90:
-#     counter += 5
-# if counter > 90:
-#     counter = 925
+# Bar chart creation
+fig1, ax1 = plt.subplots()
+
+# Bar width
+bar_width = 0.35
+
+# Bar positions
+cloudy_positions = np.arange(len(elements))
+observed_positions = cloudy_positions + bar_width
+
+# Plotting bars for CLOUDY
+ax1.bar(cloudy_positions, cloudy_values, bar_width, label='CLOUDY')
+
+# Plotting bars for OBSERVED
+ax1.bar(observed_positions, observed_values, bar_width, label='OBSERVED')
+
+# Adding text on top of bars
+for i, value in enumerate(cloudyVals):
+    if value < 500:
+        ax1.text(cloudy_positions[i], value + 5, f'{value}', ha='center', va='bottom', fontsize=12, rotation=90)
+    else:
+        ax1.text(cloudy_positions[i], value/10 + 5, f'{value}', ha='center', va='bottom', fontsize=12, rotation=90)
+for i, value in enumerate(obsVals):
+    if value < 500:
+        ax1.text(observed_positions[i], value + 5, f'{value}', ha='center', va='bottom', fontsize=12, rotation=90)
+    else:
+        ax1.text(observed_positions[i], value/10 + 5, f'{value}', ha='center', va='bottom', fontsize=12, rotation=90)
+# Adding labels and title
+ax1.set_xlabel('Species', fontsize=16)
+ax1.set_ylabel('Line Strength Relative to Hβ = 100', fontsize=16)
+ax1.set_title('CEK Emission-Line Ratios', fontsize=18)
+plt.tick_params(axis='y', which='major', labelsize=14)
+plt.tick_params(axis='x', which='major', labelsize=11.5)
+
+# Adding x-axis ticks and labels
+ax1.set_xticks(cloudy_positions + bar_width / 2)
+ax1.set_xticklabels(elements)
+
+ax1.set_ylim(0, 310)
+# Adding legend
+ax1.legend(loc="upper center")
+
+# Show the plot
+plt.savefig("CEKPLOTSTRIAL.pdf", bbox_inches="tight", dpi=300)
 
 
 '''
