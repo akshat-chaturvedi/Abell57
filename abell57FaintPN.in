@@ -1,8 +1,8 @@
 title abell57PNFaint
 sphere
 #temp = 100000 K
-LUMINOSITY 36.2790599913 LOG
-HDEN=3.0 LOG
+LUMINOSITY 36.446377326 LOG
+HDEN=2.0 LOG
 RADIUS= 17.091751 LOG
 abundances planetary nebula
 table SED "abell57Unique.sed"

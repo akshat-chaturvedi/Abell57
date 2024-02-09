@@ -38,7 +38,7 @@ dat1.rename_column("S  2 6730.81A", "S2 6731")
 lineRatios = []
 colNames = []
 for colName in dat1.colnames:
-    lineRatios.append(np.mean(dat1[colName][10:30]/dat1["HBeta"][10:30]))
+    lineRatios.append(np.mean(dat1[colName][10:70]/dat1["HBeta"][10:70]))
     colNames.append(colName)
 
 # print(colNames[1:])
@@ -49,17 +49,17 @@ lineRatios = np.asarray(lineRatios[1:])
 
 # breakpoint()
 
-alphaBetaRatio = np.mean(dat1["HAlpha"][10:30]/dat1["HBeta"][10:30])
-O3Ratio = np.mean((dat1["O3 5007"][10:30]+dat1["O3 4961"][10:30])/dat1["O3 4363"][10:30])
-O3HBetaRatio = np.mean(dat1["O3 5007"][10:30]/dat1["HBeta"][10:30])
-He5876HBetaRatio = np.mean(dat1["He1 5876"][10:30]/dat1["HBeta"][10:30])
-Ne3869HBetaRatio = np.mean(dat1["Ne3 3868"][10:30] / dat1["HBeta"][10:30])
-ArIV4711HBetaRatio = np.mean(dat1["Ar4 4711"][10:30]/dat1["HBeta"][10:30])
-O2DoubletRatio = np.mean((dat1["O2 3726"][10:30]+dat1["O2 3729"][10:30])/dat1["HBeta"][10:30])
-N2HBetaRatio = np.mean(dat1["N2 6583"][10:30]/dat1["HBeta"][10:30])
-S2HBetaRatio = np.mean(dat1["S2 6716"][10:30]/dat1["HBeta"][10:30])
-He4686HBetaRatio = np.mean(dat1["He2 4685"][10:30]/dat1["HBeta"][10:30])
-S2DoubletHBetaRatio = np.mean((dat1["S2 6731"][10:30]+dat1["S2 6716"][10:30])/dat1["HBeta"][10:30])
+alphaBetaRatio = np.mean(dat1["HAlpha"][10:70]/dat1["HBeta"][10:70])
+O3Ratio = np.mean((dat1["O3 5007"][10:70]+dat1["O3 4961"][10:70])/dat1["O3 4363"][10:70])
+O3HBetaRatio = np.mean(dat1["O3 5007"][10:70]/dat1["HBeta"][10:70])
+He5876HBetaRatio = np.mean(dat1["He1 5876"][10:70]/dat1["HBeta"][10:70])
+Ne3869HBetaRatio = np.mean(dat1["Ne3 3868"][10:70] / dat1["HBeta"][10:70])
+ArIV4711HBetaRatio = np.mean(dat1["Ar4 4711"][10:70]/dat1["HBeta"][10:70])
+O2DoubletRatio = np.mean((dat1["O2 3726"][10:70]+dat1["O2 3729"][10:70])/dat1["HBeta"][10:70])
+N2HBetaRatio = np.mean(dat1["N2 6583"][10:70]/dat1["HBeta"][10:70])
+S2HBetaRatio = np.mean(dat1["S2 6716"][10:70]/dat1["HBeta"][10:70])
+He4686HBetaRatio = np.mean(dat1["He2 4685"][10:70]/dat1["HBeta"][10:70])
+S2DoubletHBetaRatio = np.mean((dat1["S2 6731"][10:70]+dat1["S2 6716"][10:70])/dat1["HBeta"][10:70])
 # breakpoint()
 
 with open("abell57CSFaint.in", "r") as f:
@@ -146,7 +146,7 @@ label_format = '{:g}'
 
 
 
-# print(np.mean(dat1["HAlpha"][10:30]))
+# print(np.mean(dat1["HAlpha"][10:70]))
 
 # arr1 = []
 # arr2 = []
@@ -165,11 +165,11 @@ label_format = '{:g}'
 # print(b)
 # print(c)
 
-#print(np.mean((dat1["O2 3726"][10:30]/dat1["HBeta"][10:30])))
-#print(np.mean((dat1["O2 3729"][10:30]/dat1["HBeta"][10:30])))
+#print(np.mean((dat1["O2 3726"][10:70]/dat1["HBeta"][10:70])))
+#print(np.mean((dat1["O2 3729"][10:70]/dat1["HBeta"][10:70])))
 
 cloudy_values = ratioDict['CLOUDY']
-cloudyVals = [19.3, 89.0, 5.1, 3.7, 1113, 12.8, 276, 4.0]
+cloudyVals = [16.6, 91.2, 30.3, 7.4, 1016, 8.2, 273, 3.4]
 observed_values = ratioDict['OBSERVED']
 obsVals = [19.6, 87.2, 26.0, 5.5, 984, 11.8, 287, 5.2]
 # Bar chart creation
@@ -260,7 +260,7 @@ plt.tick_params(axis='x', which='major', labelsize=11.5)
 ax1.set_xticks(cloudy_positions + bar_width / 2)
 ax1.set_xticklabels(elements)
 
-ax1.set_ylim(0, 320)
+ax1.set_ylim(0, 325)
 # Adding legend
 ax1.legend(loc="upper center")
 
